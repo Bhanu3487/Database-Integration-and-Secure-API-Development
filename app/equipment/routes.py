@@ -295,7 +295,6 @@ def borrow_equipment(current_user_id, current_user_role):
         # --- End Availability Check ---
 
         # --- Use Transaction ---
-        conn.start_transaction() # Explicit transaction needed for multi-step
         cursor = conn.cursor()
         # Assumes EquipmentLog(LogID PK AI, EquipmentID FK, IssuedTo FK(cims), IssueDate DT, ReturnDate DT NULL)
         sql_log = "INSERT INTO EquipmentLog (EquipmentID, IssuedTo, IssueDate) VALUES (%s, %s, %s)"
@@ -362,9 +361,6 @@ def return_equipment(current_user_id, current_user_role, log_id):
         equipment_id = log_data['EquipmentID'] # Get equipment ID for later update
         cursor_check.close()
         # --- End Check ---
-
-        # --- Use Transaction ---
-        conn.start_transaction()
         cursor = conn.cursor()
 
         # Update the log entry

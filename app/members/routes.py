@@ -208,7 +208,6 @@ def delete_member_task3(current_user_id, current_user_role, member_id_to_delete)
         current_app.logger.info(f"MemberID {member_id_to_delete} found in {mapping_count} group mappings.")
 
         # Use a transaction for the deletion steps
-        # conn.start_transaction()
         deleted_from_login = 0
         deleted_from_members = 0
         deleted_from_mapping = 0
