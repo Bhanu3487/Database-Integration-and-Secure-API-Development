@@ -148,7 +148,7 @@ curl -X GET http://localhost:5001/admin/profile/447 \
 
 ### 5. (Optional) Frontend Setup
 
-If you plan to connect a React frontend to this Flask API, you must have Node.js and npm installed to manage the necessary dependencies. This step is for the client-side application only.
+If you plan to connect a React frontend to this Flask API, you must have Node.js and npm installed to manage the necessary dependencies. This step is for the client side application only.
 
 Navigate to your frontend project directory and run the following commands to install the required packages:
 
